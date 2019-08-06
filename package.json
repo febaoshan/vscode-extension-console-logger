@@ -6,7 +6,7 @@
 		"type": "git",
 		"url":"https://github.com/gitshan/vscode-extension-console-logger.git"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "huangbaoshan",
 	"icon": "icon/icon.jpg",
 	"engines": {

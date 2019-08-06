@@ -6,18 +6,6 @@ const vscode = require('vscode');
 // your extension is activated the very first time the command is executed
 
 /**
- * @note: 字符串新增空白字符方法
- * @param num: 需要的空白字符个数
- */
-function addBlankString(num) {
-	let blankStr = '';
-	for(let i = 0; i < num; i++) {
-		blankStr += '\xa0';
-	}
-	return blankStr;
-}
-
-/**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
@@ -52,6 +40,9 @@ function activate(context) {
 		// 当前行非空文本起始位置
 		const curLineStartCharacter = curLineText.search(/\S/i);
 
+		// 当前行为空文本
+		const curBlankText = curLineText.substring(0, curLineStartCharacter);
+
 		// 当前选中文本内容
 		const curText = curLineText.substring(start.character, end.character);
 
@@ -64,7 +55,7 @@ function activate(context) {
 		
 		// 调用编辑接口
 		activeTextEditor.edit((TextEditorEdit) => {
-			TextEditorEdit.insert(insertPositon, `${addBlankString(curLineStartCharacter)}console.log('${curText}${identifier}', ${curText});\n`);
+			TextEditorEdit.insert(insertPositon, `${curBlankText}console.log('${curText}${identifier}', ${curText});\n`);
 		});
 	});
 

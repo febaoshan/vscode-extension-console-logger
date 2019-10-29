@@ -1,4 +1,4 @@
-# comment-aligner README
+# console-logger README
 
 ## Features
 

@@ -1,5 +1,7 @@
 # console-logger README
 
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=febaoshan.vscode-extension-console-logger)
+
 ## Features
 
 A new extension for adding console code in your editor.
